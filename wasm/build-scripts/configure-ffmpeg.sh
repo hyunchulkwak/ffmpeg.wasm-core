@@ -10,10 +10,12 @@ FLAGS=(
   --disable-all
 
   # external libaries
-  --enable-gpl            # required by x264
+  # --enable-gpl            # required by x264
   # --enable-nonfree        # required by fdk-aac
   --enable-zlib           # enable zlib
-  --enable-libx264        # enable x264
+  # --enable-libx264        # enable x264
+  --enable-libvpx
+  --enable-libopus
   # --enable-libfdk-aac     # enable libfdk-aac
 
   # basic requirements to process video
@@ -27,9 +29,9 @@ FLAGS=(
   # all components we explicitly need
   --enable-demuxer=mov # also mp4,m4a,3gp,3g2,mj2
   --enable-decoder=h264,aac
-  --enable-encoder=libx264,aac
-  --enable-parser=h264,aac
-  --enable-muxer=mp4
+  --enable-encoder=libvpx_vp8,libopus
+  --enable-parser=h264,aac,vp8
+  --enable-muxer=webm
 
   # filters, that ffmpeg might add automatically
   # insert_trim https://github.com/FFmpeg/FFmpeg/blob/45ab5307a6e8c04b4ea91b1e1ccf71ba38195f7c/fftools/ffmpeg_filter.c#L355
