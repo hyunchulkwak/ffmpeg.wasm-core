@@ -92,6 +92,11 @@ jobs:
         with:
           name: ffmpeg-core
           path: ${{ env.DIST_PATH }}
+      - name: Upload core
+        uses: actions/upload-artifact@v3
+        with:
+          name: ffmpeg-core
+          path: wasm/packages/core/dist/*
 
   # Disable macos build due to there is no ldconfig command
   # during freetype2 build.
